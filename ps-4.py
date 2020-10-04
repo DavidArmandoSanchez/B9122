@@ -71,24 +71,3 @@ std5 = std5.tolist()
 
 Standard_dev = pd.DataFrame({"x1": std1, "x2": std2, "x3": std3, "x4": std4, "x5": std5})
 print(Standard_dev)
-
-# Utility
-
-b = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.4])
-
-e1 = np.exp(np.dot(x1.values, b))
-e2 = np.exp(np.dot(x2.values, b))
-e3 = np.exp(np.dot(x3.values, b))
-e4 = np.exp(np.dot(x4.values, b))
-e5 = np.exp(np.dot(x4.values, b))
-
-exp = pd.DataFrame({"e1": e1, "e2": e2, "e3": e3, "e4": e4, "e5": e5})
-
-res = pd.DataFrame({"sum": pd.DataFrame.sum(exp, 1)})
-res["l1"] = np.log(exp["e1"]/res["sum"])
-res["l2"] = np.log(exp["e2"]/res["sum"])
-res["l3"] = np.log(exp["e3"]/res["sum"])
-res["l4"] = np.log(exp["e4"]/res["sum"])
-res["l5"] = np.log(exp["e5"]/res["sum"])
-res["choice"] = data["choice"]
-
